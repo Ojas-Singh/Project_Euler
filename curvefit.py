@@ -17,7 +17,7 @@ ydata= np.array([i[1] for i in points])
 popt, pcov = curve_fit(func, xdata, ydata)
 plt.plot(xdata, ydata, 'b-', label='data')
 plt.plot(xdata, func(xdata, *popt), 'r-',label='fit: a=%5.3f, b=%5.3f, c=%5.3f' % tuple(popt))
-
+print(np.sqrt(np.diag(pcov)))
 
 plt.xlabel('x')
 plt.ylabel('y')
